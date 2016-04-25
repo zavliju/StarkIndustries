@@ -6,15 +6,10 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'CreateAdminsTable' => $baseDir . '/database/migrations/2016_04_15_054647_create_admins_table.php',
-    'CreateDireksisTable' => $baseDir . '/database/migrations/2016_04_15_054628_create_direksis_table.php',
-    'CreateInventoriesTable' => $baseDir . '/database/migrations/2016_04_15_054703_create_inventories_table.php',
-    'CreateLaporansTable' => $baseDir . '/database/migrations/2016_04_15_054724_create_laporans_table.php',
+    'CreateAsetsTable' => $baseDir . '/database/migrations/2016_04_25_005721_create_asets_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
-    'CreatePelanggansTable' => $baseDir . '/database/migrations/2016_04_15_054743_create_pelanggans_table.php',
-    'CreatePemesananasTable' => $baseDir . '/database/migrations/2016_04_15_054803_create_pemesananas_table.php',
-    'CreatePemesanansTable' => $baseDir . '/database/migrations/2016_04_15_054824_create_pemesanans_table.php',
-    'CreateSenjatasTable' => $baseDir . '/database/migrations/2016_04_15_054836_create_senjatas_table.php',
+    'CreatePerbaikansTable' => $baseDir . '/database/migrations/2016_04_25_005940_create_perbaikans_table.php',
+    'CreatePetugasTable' => $baseDir . '/database/migrations/2016_04_25_005953_create_petugas_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',

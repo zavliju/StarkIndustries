@@ -21,12 +21,8 @@ class RedirectIfNotAuthenticated
         //     return redirect('/');
         // }
 
-        if(Session::has('pelanggan')){
-            return redirect('/pelanggan/index');
-        }
-
-        if(Session::has('admininv')){
-            return redirect('/admininv/index');
+        if(Session::has('petugas')){
+            return redirect('/petugas/index');
         }
         // if(Session::has('admin')){
         //     return redirect('/berita');

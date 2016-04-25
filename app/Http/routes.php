@@ -24,9 +24,9 @@
 // 	return view('auth.login');
 // });
 
-Route::group(['namespace' => 'User', 'middleware' => ['pelangganauthenticated']], function () {
-	Route::controller('/pelanggan', 'PelangganController');
-	Route::get('/', 'PelangganController@getIndex');
+Route::group(['namespace' => 'User', 'middleware' => ['petugasauthenticated']], function () {
+	Route::controller('/petugas', 'PetugasController');
+	Route::get('/', 'PetugasController@getIndex');
 });
 
 // Route::group(['namespace' => 'User', 'middleware' => ['admininvauthenticated']], function () {
@@ -44,10 +44,6 @@ Route::group(['middleware' => ['authenticated']], function(){
 
 Route::group(['middleware' => ['notauthenticated']], function(){
 	Route::post('/login/is-login', 'LoginController@postIsLogin');
-	Route::post('/login/is-login-admin-inv', 'LoginController@postIsLoginAdminInv');
-	Route::post('/login/is-login-direksi', 'LoginController@postIsLoginDireksi');
-	Route::get('/login/index-admin-inv', 'LoginController@getIndexAdminInv');
-	Route::get('/login/index-direksi', 'LoginController@getIndexDireksi');
 	Route::get('/login/index', 'LoginController@getIndex');
 	Route::get('/login', 'LoginController@getIndex');
 });
@@ -61,12 +57,3 @@ Route::group(['middleware' => ['notauthenticated']], function(){
 | kernel and includes session state, CSRF protection, and more.
 |
 */
-
-Route::group(['namespace' => 'User', 'middleware' => ['web']], function () {
-    //
-	Route::controller('/admininv', 'AdminInvController');
-	Route::controller('/direksi', 'DireksiController');
-	Route::get('/', 'AdminInvController@getIndex');
-});
-
-Route::get('/login/logout', 'LoginController@getLogout');

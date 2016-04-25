@@ -46,9 +46,7 @@ class Kernel extends HttpKernel
     protected $routeMiddleware = [
         'auth' => \App\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
-        'pelangganauthenticated' => \App\Http\Middleware\RedirectIfAuthenticated::class,
-        'admininvauthenticated' => \App\Http\Middleware\RedirectIfAdminInvAuthenticated::class,
-        'adminpabrikauthenticated' => \App\Http\Middleware\RedirectIfAuthenticated::class,
+        'petugasauthenticated' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'authenticated' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'notauthenticated' => \App\Http\Middleware\RedirectIfNotAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,

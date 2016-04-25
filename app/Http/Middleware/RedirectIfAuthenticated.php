@@ -21,7 +21,7 @@ class RedirectIfAuthenticated
         //     return redirect('/');
         // }
 
-        if(!Session::has('pelanggan')){
+        if(!Session::has('petugas')){
             return redirect('/login');
         }
 

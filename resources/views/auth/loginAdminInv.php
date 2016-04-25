@@ -1,18 +1,19 @@
-<?php $__env->startSection('content'); ?>
+@extends('layouts.loginDefault')
+@section('content')
 <body class="login-page">
     <div class="login-box">
       <div class="login-logo">
-        <a href="<?php echo e(url('/')); ?>"><b>Stark</b>Industries</a>
+        <a href="{{ url('/') }}"><b>Stark</b>Industries</a>
       </div><!-- /.login-logo -->
       <div class="login-box-body">
-        <p class="login-box-msg">Masuk sebagai petugas</p>
-        <form action="<?php echo e(url('/login/is-login')); ?>" method="post">
+        <p class="login-box-msg">Masuk sebagai admin inventory</p>
+        <form action="{{ url('/login/is-login-admin-inv') }}" method="post">
           <div class="form-group has-feedback">
             <input name="email" type="text" class="form-control" placeholder="Email"/>
             <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
           </div>
           <div class="form-group has-feedback">
-            <input name="pass" type="password" class="form-control" placeholder="Password"/>
+            <input name="password" type="password" class="form-control" placeholder="Password"/>
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
           </div>
           <div class="row">
@@ -24,5 +25,4 @@
 
       </div><!-- /.login-box-body -->
     </div><!-- /.login-box -->
-  <?php $__env->stopSection(); ?>
-<?php echo $__env->make('layouts.loginDefault', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+  @stop

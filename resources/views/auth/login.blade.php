@@ -6,14 +6,14 @@
         <a href="{{ url('/') }}"><b>Stark</b>Industries</a>
       </div><!-- /.login-logo -->
       <div class="login-box-body">
-        <p class="login-box-msg">Masuk sebagai pelanggan</p>
+        <p class="login-box-msg">Masuk sebagai petugas</p>
         <form action="{{ url('/login/is-login') }}" method="post">
           <div class="form-group has-feedback">
             <input name="email" type="text" class="form-control" placeholder="Email"/>
             <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
           </div>
           <div class="form-group has-feedback">
-            <input name="password" type="password" class="form-control" placeholder="Password"/>
+            <input name="pass" type="password" class="form-control" placeholder="Password"/>
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
           </div>
           <div class="row">

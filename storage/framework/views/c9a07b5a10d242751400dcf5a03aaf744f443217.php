@@ -9,9 +9,7 @@
             <div class="pull-left info">
               <p>
               <?php 
-                if(Session::has('pelanggan')) echo(Session::get('pelanggan'));
-                else if(Session::has('admininv')) echo(Session::get('admininv'));
-                else if(Session::has('direksi')) echo(Session::get('direksi'));
+                if(Session::has('petugas')) echo(Session::get('petugas'));
               ?>
               </p>
 
@@ -21,19 +19,10 @@
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
             <li class="header">MAIN NAVIGATION</li>
-            <?php if(Session::has('pelanggan')){ ?>
-            <li><a href="<?php echo e(url('pelanggan')); ?>"><i class="fa fa-dashboard"></i> <span>View Pemesanan</span></a></li>
-            <li><a href="<?php echo e(url('/pelanggan/index-input')); ?>"><i class="fa fa-th"></i> Input Pemesanan</a></li>
-            <?php } ?>
-            <?php if(Session::has('admininv')){ ?>
-            <li><a href="<?php echo e(url('admininv')); ?>"><i class="fa fa-dashboard"></i> <span>ACC Pesanan</span></a></li>
-            <li><a href="<?php echo e(url('/admininv/index-senjata')); ?>"><i class="fa fa-th"></i>Lihat Senjata</a></li>
-            <li><a href="<?php echo e(url('/admininv/index-input-senjata')); ?>"><i class="fa fa-th"></i>Input Senjata</a></li>
-            <li><a href="<?php echo e(url('/admininv/index-laporan')); ?>"><i class="fa fa-th"></i>Lihat Laporan</a></li>
-            <li><a href="<?php echo e(url('/admininv/index-input-laporan')); ?>"><i class="fa fa-th"></i>Input Laporan</a></li>
-            <?php } ?>
-            <?php if(Session::has('direksi')){ ?>
-            <li><a href="<?php echo e(url('direksi')); ?>"><i class="fa fa-dashboard"></i> <span>ACC Laporan</span></a></li>
+            <?php if(Session::has('petugas')){ ?>
+            <li><a href="<?php echo e(url('petugas')); ?>"><i class="fa fa-dashboard"></i> <span>Lihat Aset</span></a></li>
+            <li><a href="<?php echo e(url('/petugas/index-input')); ?>"><i class="fa fa-th"></i> Input Aset</a></li>
+            <li><a href="<?php echo e(url('petugas/index-perbaikan')); ?>"><i class="fa fa-dashboard"></i> <span>Lihat Perbaikan</span></a></li>
             <?php } ?>
             
            

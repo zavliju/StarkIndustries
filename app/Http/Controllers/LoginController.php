@@ -7,12 +7,9 @@ use Illuminate\Http\Request;
 use Session;
 
 use Crypt;
-use App\Pelanggan;
-use App\Admin;
-use App\Direksi;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\Petugas;
 class LoginController extends Controller
 {
 
@@ -21,53 +18,17 @@ class LoginController extends Controller
         return view('auth.login', $data);
     }
 
-    public function getIndexAdminInv(){
-        $data['judul'] = 'Login';
-        return view('auth.loginAdminInv', $data);
-    }
-
-    public function getIndexDireksi(){
-        $data['judul'] = 'Login';
-        return view('auth.loginDireksi', $data);
-    }
-
     public function postIsLogin(request $data){
     	$email = $data['email'];
-    	$password = $data['password'];
-    	$pelanggan = Pelanggan::where('email', $email);
-    	if($pelanggan->count()>0){
-            if(Crypt::decrypt($pelanggan->first()->password)==$password){
-                Session::put('pelanggan', $email);
-                return redirect('/pelanggan/index');
+    	$pass = $data['pass'];
+    	$petugas = Petugas::where('email', $email);
+    	if($petugas->count()>0){
+            if(Crypt::decrypt($petugas->first()->pass)==$pass){
+                Session::put('petugas', $email);
+                return redirect('/petugas/index');
             }
     	}
     	return redirect('/login')->with('status', 'wrongAuth');
-    }
-
-    public function postIsLoginAdminInv(request $data){
-        $email = $data['email'];
-        $password = $data['password'];
-        $adminInv = Admin::where('email', $email);
-        if($adminInv->count()>0){
-            if(Crypt::decrypt($adminInv->first()->password)==$password){
-                Session::put('admininv', $email);
-                return redirect('/admininv/index');
-            }
-        }
-        return redirect('/login')->with('status', 'wrongAuth');
-    }
-
-    public function postIsLoginDireksi(request $data){
-        $email = $data['email'];
-        $password = $data['password'];
-        $direksi = Direksi::where('email', $email);
-        if($direksi->count()>0){
-            if(Crypt::decrypt($direksi->first()->password)==$password){
-                Session::put('direksi', $email);
-                return redirect('/direksi/index');
-            }
-        }
-        return redirect('/login')->with('status', 'wrongAuth');
     }
 
     public function getLogout(){
